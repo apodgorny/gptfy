@@ -23,8 +23,9 @@ The `Conversation` class is the central manager for initiating and managing inte
 To initialize a `Conversation` instance, provide the following parameters:
 
 - `api_key` (str): The API key for authentication with OpenAI's services.
-- `model_name` (str): The name of the model you wish to use.
-- `client_name` (str): The name of the client for the conversation.
+- `model` (dict): The definition of the model you wish to use.
+- `client` (gptfy.client.Client): The instance of the `Client` class for the conversation.
+- `instructions` (list[str]): Initial system instructions.
 
 ### Methods
 - `start()`: Begins the conversation with the model and client.
@@ -82,13 +83,13 @@ Remember to replace `'your_api_key_here'`, `'gpt-3.5-turbo'`, and `'default_clie
 ### Initialization
 To create an instance of `Model`, the following parameters are required:
 
-- `model` (dict): A dictionary containing model details such as model name, prices, and token limits.
+- `model` (dict): A defined in module dictionary containing model details such as model name, prices, and token limits.
 - `conversation` (Conversation): A reference to the associated `Conversation` instance.
 - `api_key` (str): The API key for OpenAI's services.
 - `temperature` (float): Optional. The temperature setting for the model's responses.
 
 ### Methods
-- `name()`: Returns the name of the model.
+- `name`: The name property of the model.
 - `get_usage()`: Retrieves the current usage statistics, including costs.
 - `unwind()`: Removes the last message from the conversation if it is not from the system.
 - `start(instructions)`: Starts the model with the provided instructions.
@@ -103,13 +104,9 @@ To create an instance of `Model`, the following parameters are required:
 The `Client` class is a foundational class designed for client-specific operations, including loading instructions and managing client-side interaction.
 
 ### Initialization
-To initialize a `Client`, you need:
-
-- `conversation` (Conversation): A reference to the associated `Conversation` instance.
-- `name` (str): The name identifier for the client.
+To initialize a `Client`, you need create class, that exends a `Client` and implements its methods.
 
 ### Methods
-- `get_instructions()`: Retrieves the instructions for the conversation from the designated instructions directory.
 - `start()`: Starts client-specific operations. [Implementation details required]
 - `prompt(content)`: Handles the prompt received from the conversation. [Implementation details required]
 
@@ -121,10 +118,8 @@ The library includes settings management and custom error handling through `sett
 
 ---
 
-## Models and Clients
+## Models
 
 The library supports various models with different capabilities and pricing, such as `GPT_35_TURBO`, `GPT_35_TURBO_INSTRUCT`, `GPT_40`, `GPT_40_TURBO`, `GPT_40_TURBO_VISION`, and `GPT_40_32K`.
-
-Clients are dynamically loaded based on the provided `name` parameter and must have an instructions directory containing `.txt` files with the necessary instructions.
 
 ---
