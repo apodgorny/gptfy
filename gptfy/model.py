@@ -71,7 +71,7 @@ class Model:
 	######################### PUBLIC #########################
 
 	def name(self):
-		return self.model.model
+		return self.model['model']
 
 	def get_usage(self):
 		price = 0
