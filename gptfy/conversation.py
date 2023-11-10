@@ -8,7 +8,7 @@ class Conversation:
 		self.instructions = instructions
 
 	def start(self):
-		print('Connected to ' + self.model.name())
+		print('Connected to ' + self.model.name)
 		self.model.start(self.instructions)
 		self.client.start(self.prompt)
 

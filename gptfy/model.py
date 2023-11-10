@@ -70,6 +70,7 @@ class Model:
 
 	######################### PUBLIC #########################
 
+	@property	
 	def name(self):
 		return self.model['model']
 
@@ -92,7 +93,7 @@ class Model:
 	def prompt(self, content, role='user'):
 		self.messages.append({'role': role, 'content': content})
 		response = openai.ChatCompletion.create(
-			model    = self.model,
+			model    = self.name,
 			messages = self.messages
 		)
 		self._update_usage(response['usage'])
