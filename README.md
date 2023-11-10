@@ -32,28 +32,6 @@ To initialize a `Conversation` instance, provide the following parameters:
 
 ---
 
-## BaseModel Class
-
-### Overview
-`BaseModel` serves as a base class for different model implementations. It handles the interaction with OpenAI's API, tracking usage, and updating conversation states.
-
-### Initialization
-To create an instance of `BaseModel`, the following parameters are required:
-
-- `model` (dict): A dictionary containing model details such as model name, prices, and token limits.
-- `conversation` (Conversation): A reference to the associated `Conversation` instance.
-- `api_key` (str): The API key for OpenAI's services.
-- `temperature` (float): Optional. The temperature setting for the model's responses.
-
-### Methods
-- `name()`: Returns the name of the model.
-- `get_usage()`: Retrieves the current usage statistics, including costs.
-- `unwind()`: Removes the last message from the conversation if it is not from the system.
-- `start(instructions)`: Starts the model with the provided instructions.
-- `prompt(content, role)`: Sends a prompt to the model and processes the response.
-
----
-
 ## Usage
 
 Certainly, Alexander. Here is an example of how a user might utilize the `Conversation` class to start a conversation, along with explanations on usage:
@@ -93,6 +71,29 @@ conversation.start()
 This process will initialize the conversation with the appropriate model and client based on your provided details, allowing you to begin sending prompts and receiving responses.
 
 Remember to replace `'your_api_key_here'`, `'gpt-3.5-turbo'`, and `'default_client'` with your actual API key and the specific model and client names you have set up in your `gptfy` library.
+
+---
+
+## BaseModel Class
+
+### Overview
+`BaseModel` serves as a base class for different model implementations. It handles the interaction with OpenAI's API, tracking usage, and updating conversation states.
+
+### Initialization
+To create an instance of `BaseModel`, the following parameters are required:
+
+- `model` (dict): A dictionary containing model details such as model name, prices, and token limits.
+- `conversation` (Conversation): A reference to the associated `Conversation` instance.
+- `api_key` (str): The API key for OpenAI's services.
+- `temperature` (float): Optional. The temperature setting for the model's responses.
+
+### Methods
+- `name()`: Returns the name of the model.
+- `get_usage()`: Retrieves the current usage statistics, including costs.
+- `unwind()`: Removes the last message from the conversation if it is not from the system.
+- `start(instructions)`: Starts the model with the provided instructions.
+- `prompt(content, role)`: Sends a prompt to the model and processes the response.
+
 
 ---
 
