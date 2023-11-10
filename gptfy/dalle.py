@@ -1,8 +1,4 @@
-import os
-import requests
 import openai
-
-from library.string import String
 
 
 class Dalle:

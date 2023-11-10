@@ -51,7 +51,7 @@ api_key = 'your_api_key_here'
 
 # The model and client names are assumed to be defined in your settings or passed as strings.
 model_name = 'gpt-3.5-turbo'  # Example model name
-client_name = 'your-client-class'  # Example client name (Extends BaseClient)
+client_name = 'your-client-class'  # Example client name (Extends Client)
 
 # Creating a Conversation instance
 conversation = Conversation(api_key, model_name, client_name)
@@ -74,13 +74,13 @@ Remember to replace `'your_api_key_here'`, `'gpt-3.5-turbo'`, and `'default_clie
 
 ---
 
-## BaseModel Class
+## Model Class
 
 ### Overview
-`BaseModel` serves as a base class for different model implementations. It handles the interaction with OpenAI's API, tracking usage, and updating conversation states.
+`Model` serves as a base class for different model implementations. It handles the interaction with OpenAI's API, tracking usage, and updating conversation states.
 
 ### Initialization
-To create an instance of `BaseModel`, the following parameters are required:
+To create an instance of `Model`, the following parameters are required:
 
 - `model` (dict): A dictionary containing model details such as model name, prices, and token limits.
 - `conversation` (Conversation): A reference to the associated `Conversation` instance.
@@ -97,13 +97,13 @@ To create an instance of `BaseModel`, the following parameters are required:
 
 ---
 
-## BaseClient Class
+## Client Class
 
 ### Overview
-The `BaseClient` class is a foundational class designed for client-specific operations, including loading instructions and managing client-side interaction.
+The `Client` class is a foundational class designed for client-specific operations, including loading instructions and managing client-side interaction.
 
 ### Initialization
-To initialize a `BaseClient`, you need:
+To initialize a `Client`, you need:
 
 - `conversation` (Conversation): A reference to the associated `Conversation` instance.
 - `name` (str): The name identifier for the client.

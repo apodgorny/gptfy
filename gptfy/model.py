@@ -44,7 +44,7 @@ GPT_40_32K = {
 
 
 
-class BaseModel:
+class Model:
 	def __init__(self, model, conversation, api_key, temperature=0):
 		self.api_key       = api_key
 		openai.api_key     = api_key

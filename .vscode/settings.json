@@ -1,0 +1,5 @@
+{
+    "sqltools.connections": [],
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "/home/patriarch/dev/lib/python/gptfy/venv"
+}
