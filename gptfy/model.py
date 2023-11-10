@@ -63,7 +63,7 @@ class Model:
 		self.input_tokens  += usage['prompt_tokens']
 		self.output_tokens += usage['completion_tokens']
 
-		if self.input_tokens + self.output_tokens >= self.model.token_limit - self.token_buffer:
+		if self.input_tokens + self.output_tokens >= self.model['token_limit'] - self.token_buffer:
 			if len(self.messages) > 4:
 				self.messages.pop(2)
 				self.messages.pop(2)
@@ -76,8 +76,8 @@ class Model:
 
 	def get_usage(self):
 		price = 0
-		price += self.input_tokens  * self.model.input_price / 1000
-		price += self.output_tokens * self.model.output_price / 1000
+		price += self.input_tokens  * self.model['input_price'] / 1000
+		price += self.output_tokens * self.model['output_price'] / 1000
 		return price, self.input_tokens + self.output_tokens
 
 	def unwind(self):
